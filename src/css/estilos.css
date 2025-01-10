@@ -1,0 +1,427 @@
+/* CSS FEITO COM PASSO A PASSO COMENTADO E DETALHADO */
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* para importar a fonte do google fonts (sem ter que linkar pelo html) */
+
+body {
+    font-family: "Public Sans", serif;
+    /* para chamar a fonte na pagina inteira */
+}
+
+/* -------------------------- LOGO --------------------------- */
+
+.logo .imagem {
+    width: 100px;
+
+    /* 1° para diminuir somente o tamanho da imagem da logo (sendo chamado dessa forma, o tamanho vai afetar na logo do cabeçalho e do rodapé, padronizando as duas no mesmo tamanho) */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    /* 1° display flex alinha os itens na mesma linha e torna possível o uso das demais propriedades flex
+    2° align items center posicionou o logo do site ao centro (lembrando que temos um spacebetween dado antes) logo do site = imagem do site + agencia xpto
+    3° text-transform uppercase para deixar o texto todo em caps lock (caixa alta) */
+}
+
+.logo .titulo {
+    margin-left: 7px;
+    font-size: 17px;
+    transition: 0.2s ease-in-out;
+    font-weight: 800;
+
+    /* 1° margin left para espaçar externamente o nome do site e a imagem da logo 
+    2° font size para alterar o tamanho da fonte
+    3° transition ease in out para que quando o efeito de "hover" (abaixo .titulo:hover) aconteça, a transição seja mais suave e demore 0.3 segundos para ficar verde 
+    4° font weight de 800 para que ficasse em negrito (uma fonte mais 'pesada') 
+    SEMPRE COLOCAR O TRANSITION DENTRO DA ESTILIZAÇÃO DA TAG E NÃO DENTRO DO HOVER! */
+}
+
+.logo .titulo:hover {
+    color: #1ED760;
+
+    /* 1° para que quando passe o mouse por cima, a cor mude para verde, indicando que se trata de um elemento clicável */
+}
+
+/* -------------------------- LOGO --------------------------- */
+
+/* ------------------------ CABEÇALHO -- ---------------------- */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    max-width: 1170px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    /* 1° display flex alinha os itens
+    2° justify space between coloca um espaço entre os itens
+    3° align items center posiciona todos os filhos ao centro do container pai
+    4° padding está dando um espaçamento em cima e embaixo
+    5° max width formata o tamanho máximo que será esse container (ou seja, nao vai ocupar de fora a fora da tela sem limite)
+    6° margin 0 auto coloca o container no centro da página
+    7° flex wrap faz com que, quando nao tiver mais espaço, a linha quebre para baixo*/
+}
+
+@media(max-width: 624px){
+    .cabecalho {
+        justify-content: center;
+
+        /* 1° antes era space-between e agora é center, para que a responsividade seja melhor e estilize de outra forma em telas menores (os seletores devem ser iguais para que funcione)
+
+        media query cria uma regra específica, ou seja, nesse caso, quando a tela for MENOR do que 624px a estilização será feita (até 624px fica de uma forma 'x', quando o tamanho da tela for de 623px pra baixo, então, essa estilização valerá) */
+    }
+
+    .cabecalho .logo {
+        margin-bottom: 30px;
+
+        /* 1° para dar um espaçamento entre a logo e os titulos de navegação do cabeçalho */
+    }
+
+    .cabecalho .menu .item a {
+        font-size: calc(0.6em + 1vw);
+
+        /*1° um font size calc para que, dependendo do tamanho da tela, o tamanho da fonte vai diminuir para que não haja quebra de linha e perca formatação
+        
+        constantando que um dos itens do menu de navegação do cabeçalho tem uma quebra de linha e perde a formatação a partir de aproximadamente 391px, então fazemos essa estilização criando uma regra para esse caso  */
+    }
+
+}
+
+.cabecalho .navegacao .menu {
+    display: flex;
+
+    /* 1° para deixar os itens de navegação do menu um ao lado do outro */
+}
+
+.cabecalho .navegacao .menu .item {
+    margin: 10px;
+
+    /* 1° para separar cada item do menu do cabeçalho um do outro (projetos, quem somos e contatos) */
+}
+
+.cabecalho .navegacao .menu .item a {
+    padding: 15px;
+    transition: 0.3s ease-in-out;
+
+    /* 1° um 'a' foi acrescentado no final, para que esse comando estiliza apenas a tag 'a' (ancora/link) do site
+    SEMPRE COLOCAR O TRANSITION DENTRO DA ESTILIZAÇÃO DA TAG E NÃO DENTRO DO HOVER! 
+    2° padding de 15px para que especificadamente o nome do site fique mais espaçado da imagem */
+}
+
+.cabecalho .navegacao .menu .item a:hover {
+    background-color: #1ED760;
+    color: #FFFFFF;
+
+    /* 1° um 'a' foi acrescentado no final, para que esse comando estiliza apenas a tag 'a' (ancora/link) do site, colocando o mesmo efeito (hover) que fica verde ao passar com o mouse por cima 
+    2° color branca para que o texto fique branco quando o fundo mudar para verde */
+}
+
+/* ------------------------ CABEÇALHO ------------------------ */
+
+/* -------------------------- PAINEL ------------------------- (1ª SECTION DENTRO DO MAIN)*/
+
+.conteudo-principal .paineis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    position: relative;
+
+    /* 1° display flex alinha os itens na mesma linha e torna possível o uso das demais propriedades flex 
+    2° justify center coloca o título "nossos projetos" ao centro, com espaços iguais antes e depois dos elementos
+    3° align items center posiciona todos os filhos ao centro do container pai 
+    4° uma altura com valor absoluto, mas depois vamos trabalhar isso no responsivo, para que a visualização fique boa em desktop e mobile
+    5° position relative para posicionar o elemento */
+}
+
+@media(max-width: 900px){
+    .conteudo-principal .paineis{
+        height: 500px;
+
+        /* 1° a altura que outrora era de 700px, agora fica com 900px, ou seja, vai ficar melhor para visualizar em mobiles (quando chegar em 900 ou menos, a regra desse media query passa a valer*/
+    }
+}
+
+.conteudo-principal .paineis .imagem-painel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(70%);
+
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+
+    /* 1° no-repeat pra dizer que não queremos que a imagem fique repetindo 
+    2° size cover pra dizer que a imagem vai cobrir toda a div
+    3° background center pra ficar sempre centralizado 
+    4° largura minima de 100%
+    5° altura de 100% também (% é uma medida relativa, então sempre vai pegar a medida do pai, que nesse caso é o 'paineis', que está com uma altura de 700px, então, nesse caso height: 100% = 700px) 
+    6° position absolute para posicionar a imagem absolutamente dentro do pai dela (a div paineis tem um position relative e as divs dentro dela terão um position absolute)
+    7° ao aplicar o comando acima, o titulo 'Nossos Projetos' vai ter sumido, para resolver isso, damos um z-index, que é um posicionamento em 'Z' (eixo de profundidade), então com um z-index -1 é como se colocasse a imagem para um camada atrás de profundidade 
+    8° o filter brightness vai fazer com que a imagem fique em um tom mais escuro, quanto menor a %, mais escuro ficará (serve para borrar backgrounds, aumentar brilho, diminuir etc 
+
+    > ESTILIZAÇÕES ABAIXO FEITAS POSTERIORMENTE, PARA QUE FACILITE O USO DO JAVASCRIPT <
+
+    9° opacity de zero para que esconda as imagens do painel, mas o elemento em si continua no html (opacity 1 mostra o elemento) 
+    10° transition de 0.3s para que seja feita uma transição (tipo uma animação) suave na propriedade que irá aparecer (quando clicar na seta e houver a troca de imagens --para a imagem aparecer, depois será dado um opacity 1) */
+}
+
+.conteudo-principal .paineis .projeto1 {
+    background-image: url('../imagens/painel1.jpg');
+
+    /* 1° chamamos a imagem pela url com um background image (de imediato ela não vai aparecer, mas é porque tem que estilizar a classe pai primeiro) */
+}
+
+.conteudo-principal .paineis .projeto2 {
+    background-image: url('../imagens/painel2.jpg');
+
+    /* 1° chamamos a imagem pela url com um background image (de imediato ela não vai aparecer, mas é porque tem que estilizar a classe pai primeiro) */
+}
+
+.conteudo-principal .paineis .projeto3 {
+    background-image: url('../imagens/painel3.jpg');
+
+    /* 1° chamamos a imagem pela url com um background image (de imediato ela não vai aparecer, mas é porque tem que estilizar a classe pai primeiro) */
+}
+
+/* a classe abaixo foi estilizada apenas qdo preparamos para começar o uso do javascript */
+.conteudo-principal .paineis .imagem-painel.mostrar {
+    opacity: 1;
+
+    /* 1° o opacity 1 para mostrar a imagem. estamos dizendo que só quando .imagem-painel tiver TAMBEM essa classe de .mostrar, então a imagem terá opacidade 1 e a imagem irá aparecer -- no caso dessa landing page, o projeto1 é nosso elemento 'mostrar', sempre será a primeira imagem a aparecer */
+    /* a estilização deve ser feita .image-painel.mostrar, pois a classe 'mostrar' não está dentro da classe 'imagem-painel', não são pai e filha, elas estão na mesma linha, na mesma classe, então, para conseguir estilizar a classe 'mostrar' ela deve vir sem espaço (tamém é chamada de 'classe modificadora' */
+}
+
+.conteudo-principal .paineis .titulo {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: calc(1em + 1vw);
+
+    /* 1° color branco para que o título 'nossos projetos' fique em branco
+    2° transform uppercase para deixa-lo todo em maiusculo
+    3° font-size calc é algo legal do javascript, dessa forma ele calcula o tamanho da fonte conforme a tela, é muito bom para o responsivo (usando 1em + 1vw (viewport width) ele sempre vai calcular o tamanho da janela, menos em celulares e maiores em desktops) */
+}
+
+.conteudo-principal .paineis .seta {
+    background: url('../imagens/seta.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-indent: 100%;
+    overflow: hidden;
+
+    /* 1° chamando o background de forma encurtada 
+    2° background no-repeat para que a seta não fique replicando, restando apenas uma pra cada
+    3° background position center para que as setas fiquem alinhadas ao centro do container
+    4° background contain para fazer com que a seta se adeque ao tamanho 
+    5° e 6° uma largura e altura de 50px para aumentar a seta 
+    7° position absolute para posicionar a imagem absolutamente dentro do pai dela 
+    8° e 9° text-indent e overflow hidden para que os escritos de 'avançar e voltar' sumam da tela (servem para esconder o texto em um elemento) */
+}
+
+.conteudo-principal .paineis .seta.btn-voltar {
+    left: 20px;
+    transform: rotateY(180deg);
+
+    /* 1° left para dizer que o posicionamento dela a esquerda será de 20px 
+    2° transforme rotateY para que a seta rotacione 180deg (graus) na vertical */
+}
+
+.conteudo-principal .paineis .seta.btn-avancar {
+    right: 20px;
+
+    /* 1° right para dizer que o posicionamento dela a esquerda será de 20px */
+}
+
+/* estilo para setas desativadas (para que quando chegue ao final das imagens (avançando ou voltando) a seta fique opaca, indicando que não há mais (imagens) como avançar/voltar) */
+/* não é necessário criar a classe "desativada" diretamente no HTML. o JavaScript cuidará disso ao adicionar ou remover a classe dinamicamente conforme o estado da navegação. */
+.seta.desativada {
+    opacity: 0.5; /* Opacidade reduzida */
+    cursor: not-allowed; /* Indica que o botão não está clicável */
+    pointer-events: none; /* Desabilita cliques */
+}
+
+
+/* ------------------------- PAINEL -------------------------- (1ª SECTION DENTRO DO MAIN)*/
+
+/* ------------------------ QUEM SOMOS ----------------------- (2ª SECTION DENTRO DO MAIN)*/
+
+.quem-somos {
+    background-color: #2941AB;
+}
+
+.quem-somos .conteudo {
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+
+    /* 1° display flex para que fique um de cada lado (o texto vai para a esquerda e a imagem para a direita) 
+    2° align items center para dizer que queremos alinhar ele verticalmente ao centro
+    3° padding de zero (pra cima e pra baixo) e 10% (para os lados), usando uma medida relativa para adeque o espaçamento dos lados para telas maiores e menores */
+}
+
+.quem-somos .conteudo .informacoes {
+    width: 40%;
+
+    /* 1° largura de 40%, usando novamente medidas relativas para responsividade, sendo que será 40% de informações + 60% de imagem = 100% */
+}
+
+.quem-somos .conteudo .imagem {
+    width: 60%;
+
+    /* 1° largura de 60%, usando novamente medidas relativas para responsividade, sendo que será 60% da imagem + 40% de informações = 100% */
+}
+
+.quem-somos .conteudo .informacoes .titulo {
+    font-size: 50px;
+    color: #1ED760;
+    margin-bottom: 20px;
+    
+    /* 1° font size pra deixar o título grande
+    2°  color para que o texto fique no mesmo tom de verde que o usado antes
+    3/ margin bottom para dar um espaçamento entre elementos (espaçar o título do texto) */
+}
+
+.quem-somos .conteudo .informacoes .texto {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    font-weight: 400;
+
+    /* 1° font size para deixar o texto maior que o padrão do navegador (que é 16px) 
+    2° line height é a altura da linha (espaçamento entre uma linha e outra) 
+    3° cor branca para o texto ficar branco 
+    4ª peso da fonte de 400 para que fique em um peso intermediário (300 leve/400 media/800 forte */
+}
+
+@media(max-width: 1200px ){
+    .quem-somos .conteudo {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 30px;
+
+    /* 1° flex direction column pra que fique em coluna (um acima do outro)
+    2° align center para que o texto fique alinhado ao centro
+    3° padding para dar um espaçamento de 100px top, bottom e 30px left, right
+    essa media query quer dizer que, quando o tamanho de tela for 1200px ou MENOR, essas regras passarão a valer*/
+    }
+
+    .quem-somos .conteudo .imagem {
+        display: none;
+
+    /* 1° esse display none faz com que a imagem que havia antes suma, pois em telas menores não fica legal de exibir */
+    }
+
+    .quem-somos .conteudo .informacoes {
+        width: 100%;
+        
+        /* 1° uma largura de 100%, para que o texto não fique todo em uma coluna mal formatada, melhorando a visualização */
+    }
+
+    /* essa media query só funcionou depois que foi colocada após os códigos anteiores, pois, como o CSS tem leitura em casacata, o width de 100% estava vindo antes da formatação que colocava ele com 40% */
+}
+
+/* ------------------------ QUEM SOMOS ----------------------- (2ª SECTION DENTRO DO MAIN)*/
+
+/* ---------------------- FOOTER (RODAPÉ) -------------------- */
+
+.rodape {
+    padding: 80px 0 20px 0;
+
+    /* 1° padding de 80px para espaçar 80 top, 0 right, 20 bottom e 0 left */
+}
+
+.rodape .navegacao {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* 1° um rodapé de 1170px para que fique igual ao cabeçalho, alinhados
+    2° margin 0 auto, sendo zero top e bottom e auto left right 
+    3° display flex para que cada elemento se alinhe ao lado do outro
+    4° justify space between coloca um espaço entre os itens 
+    5° align items center para que fiquem alinhados verticalmente 
+    6° flex wrap para que quebre a linha pra baixo */
+}
+
+.rodape .redes-sociais {
+    display: flex;
+
+    /* 1° display flex para que fique um ao lado da outra (já estava um item ao lado do outro, porém com display inline, que não seria bom para estilizar depois) */
+}
+
+.rodape .redes-sociais a {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 30px;
+    border: 2px solid #111;
+    border-radius: 50%;
+    padding: 15px;
+    width: 65px;
+    transition: 0.2s ease-in-out;
+
+    /* 1° display flex para que cada elemento se alinhe ao lado do outro
+    2° justify center coloca o link ao centro, com espaços iguais antes e depois dos elementos 
+    3° margin de 0 top, bottom e 10 left, right 
+    4° font size para poder aumentar o tamanho dos ícones das redes sociais 
+    5° border de 1 px sólido para fazer a marcação de borda dos icones 
+    6° border-radius (que é o raio) de 50% para que fique um círculo (raio de 50%)
+    7° padding pra poder afastar as bordas dos ícones e ficar visualmente mais bonito 
+    8° definimos uma largura fixa para que o círculo seja perfeito e não fique oval 
+    9° transition para que a animação de quando passa o mouse por cima seja leve */
+}
+
+.rodape .redes-sociais a:hover {
+    background-color: #1ED760;
+
+    /* 1° background color no mesmo tom de verde, pra que fique assim quando passar o mouse por cima*/
+}
+
+.rodape .copyright {
+    margin-top: 70px;
+    text-align: center;
+
+    /* 1° margin top pra dar um espaçamento entre os items de cima e esse
+    2° text align center para alinhar ele ao centro */
+}
+
+@media(max-width: 940px) {
+    .rodape .navegacao {
+        justify-content: center;
+
+        /* 1° justify center para poder alinhar todo o rodapé ao centro */
+    }
+
+    .rodape .navegacao .logo {
+        margin-bottom: 30px;
+
+        /* 1° para poder dar um espaçamento entre o logo e os ícones de redes sociais */
+    }
+
+    .rodape .navegacao .logo,
+    .rodape .navegacao .redes-sociais {
+        width: 100%;
+        justify-content: center;
+
+        /* 1° width 100% sempre, pra ocupar toda a tela e ser responsivo em mobiles e desktops
+        2° justify content para alinhar eles ao centro*/
+    }
+}
+
+/* ---------------------- FOOTER (RODAPÉ) -------------------- */
