@@ -25,4 +25,4 @@ Este projeto é uma Landing Page fictícia desenvolvida para a "Agência XPTO". 
 
 ## Como Acessar
 
-Acesse o projeto diretamente pelo GitHub Pages: [Landing Page - Agência XPTO](https://leticiaavelar.github.io/projeto-landing-page/) 
+Acesse o projeto diretamente pelo GitHub Pages: [Landing Page - Agência XPTO](https://leticiaavelar.github.io/projeto-landing-page/)
