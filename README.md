@@ -4,6 +4,9 @@
 
 Este projeto é uma Landing Page fictícia desenvolvida para a "Agência XPTO". Foi criado como parte do curso **DevQuest** ministrado pelo canal **Dev em Dobro**. A ideia principal foi aplicar os conceitos aprendidos no curso, criando uma página responsiva e funcional com ênfase em boas práticas de desenvolvimento front-end.
 
+![image](https://github.com/user-attachments/assets/e71a6596-acd6-4a80-a12d-275895115ccf)
+
+
 ## Tecnologias Utilizadas
 
 - **HTML**: Para estruturar o conteúdo da página.
