@@ -22,8 +22,4 @@ Este projeto é uma Landing Page fictícia desenvolvida para a "Agência XPTO". 
 
 ## Como Acessar
 
-Acesse o projeto diretamente pelo GitHub Pages: [Landing Page - Agência XPTO](https://leticiaavelar.github.io/projeto-landing-page/)
-
-## Autor
-
-Este projeto foi desenvolvido por Letícia Avelar. Ele representa um marco no aprendizado de desenvolvimento web e foi projetado com o intuito de compartilhar conhecimento e boas práticas com a comunidade.
+Acesse o projeto diretamente pelo GitHub Pages: [Landing Page - Agência XPTO](https://leticiaavelar.github.io/projeto-landing-page/) 
