@@ -20,7 +20,6 @@ Este projeto é uma Landing Page fictícia desenvolvida para a "Agência XPTO". 
 ## Recursos
 
 - **Responsividade**: A página foi projetada para ser visualizada em diversos dispositivos (desktop, tablet e mobile).
-- **Comentários no Código**: Tanto o arquivo CSS quanto o JS contêm comentários detalhados, explicando o passo a passo da lógica implementada. Isso foi feito para auxiliar iniciantes ou qualquer pessoa que queira entender o raciocínio por trás das decisões de design e código.
 - **Design Moderno**: Layout simples e elegante, ideal para destacar os serviços de uma agência fictícia.
 
 ## Como Acessar
